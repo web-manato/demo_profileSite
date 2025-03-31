@@ -1,0 +1,432 @@
+@use "_mixin";
+@use "_variable";
+
+// レイアウト
+// キービジュアル
+.ly_topKv{
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/sp_topKv-2000px.png);
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+}
+@include mixin.breakpoint("tab"){
+    .ly_topKv{
+        background-position: center center;
+    }
+}
+@include mixin.breakpoint("pc"){
+    .ly_topKv{
+        height: 650px;
+        background-image: url(../img/pc_topKv-3500px.png);
+    }
+}
+
+// プロフィール
+@include mixin.breakpoint("pc"){
+    .ly_profile{
+        margin-top: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1500px;
+    }
+}
+
+
+// ブロックモジュール
+// キービジュアル
+.bl_topKv_copyBody{
+    color: variable.$font-color-white;
+    font-family: variable.$font-family-en;
+    text-align: center;
+    position: absolute;
+    bottom: 24px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.bl_topKv_copy{
+    font-size: 18px;
+    letter-spacing: 6px;
+    font-weight: 300;
+}
+.bl_topKv_copy2{
+    font-size: 26px;
+    letter-spacing: 10px;
+    margin-top: 20px;
+}
+.bl_topKv_copy3{
+    letter-spacing: 4px;
+    margin-top: 20px;
+    font-weight: 300;
+}
+@include mixin.breakpoint("pc"){
+    .bl_topKv_copyBody{
+        bottom: 40px;
+    }
+    .bl_topKv_copy{
+        font-size: 32px;
+        letter-spacing: 14px;
+    }
+    .bl_topKv_copy2{
+        font-size: 72px;
+        letter-spacing: 33px;
+        margin-top: 32px;
+    }
+    .bl_topKv_copy3{
+        font-size: 24px;
+        letter-spacing: 8px;
+        margin-top: 32px;
+    }
+}
+
+// プロフィール
+.bl_profile_body{
+    margin-top: 16px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_profile_body{
+        width: 50%;
+        min-height: 354px;
+        margin-top: 0;
+        background: variable.$bg-base-light;
+        padding: 40px;
+    }
+}
+// 画像
+.bl_imgWrapper__profile{
+    margin-top: 40px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_imgWrapper__profile{
+        margin-top: 0;
+        width: 50%;
+        max-width: 540px;
+        height: 100%;
+    }
+}
+// タイトル
+.bl_profile_cont_ttlBody{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.bl_profile_cont_ttl_jp{
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.bl_profile_cont_ttl_en{
+    font-size: 12px;
+    font-family: variable.$font-family-en;
+    letter-spacing: 3px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_profile_cont_ttlBody{
+        align-items: flex-end;
+        gap: 16px;
+    }
+    .bl_profile_cont_ttl_jp{
+        font-size: 24px;
+    }
+    .bl_profile_cont_ttl_en{
+        font-size: 14px;
+    }
+}
+// コンテンツ
+.bl_profile_contBody{
+    margin-top: 16px;
+}
+.bl_profile_cont{
+    line-height: 200%;
+}
+.bl_profile_cont+.bl_profile_cont{
+    margin-top: 8px;
+}
+
+
+// プロダクト
+.bl_productsBody{
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 1300px;
+}
+.bl_products + .bl_products{
+    margin-top: 40px;
+}
+@include mixin.breakpoint("tab"){
+    .bl_productsBody{
+        margin-top: 56px;
+    }
+    .bl_products{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 64px;
+    }
+    .bl_products__reverse{
+        .bl_products_contBody{
+            order: 1;
+        }
+        .bl_imgWrapper__products{
+            order: 2;
+        }
+    }
+    .bl_products + .bl_products{
+        margin-top: 56px;
+    }
+}
+// 画像
+@include mixin.breakpoint("tab"){
+    .bl_imgWrapper__products{
+        width: 37%;
+    }
+}
+// コンテンツ
+.bl_products_contBody{
+    margin-top: 24px;
+}
+@include mixin.breakpoint("tab"){
+    .bl_products_contBody{
+        width: 67%;
+    }
+}
+// タイトル
+.bl_products_cont_ttlBody{
+    padding-bottom: 12px;
+    border-bottom: 1px solid variable.$border-grey;
+
+    .bl_products_cont_ttl{
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+}
+@include mixin.breakpoint("tab"){
+    .bl_products_cont_ttlBody{
+        width: 80%;
+        max-width: 350px;
+        padding-bottom: 24px;
+
+        .bl_products_cont_ttl{
+            font-size: 24px;
+            letter-spacing: 5px;
+        }
+    }
+}
+// 文章
+.bl_products_cont_exBody{
+    margin-top: 12px;
+
+    .bl_products_cont_ex{
+        line-height: 200%;
+    }
+    .bl_products_cont_ex + .bl_products_cont_ex{
+        margin-top: 8px;
+    }
+}
+@include mixin.breakpoint("tab"){
+    .bl_products_cont_exBody{
+        margin-top: 24px;
+
+        .bl_products_cont_ex + .bl_products_cont_ex{
+            margin-top:16px;
+        }
+    }
+}
+
+
+// 作品
+.bl_worksBody{
+    margin-top: 40px;
+}
+.bl_works_otherBody{
+    width: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+}
+.bl_works_otherBody::-webkit-scrollbar{
+    display: none;
+}
+.bl_works_other{
+    width: 760px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.bl_works_ex{
+    margin-top: 40px;
+    line-height: 175%;
+    text-align: center;
+    font-size: 16px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_worksBody{
+        margin-top: 56px;
+    }
+    .bl_works_other{
+        margin-top: 16px;
+    }
+    .bl_works_ex{
+        margin-top: 56px;
+        font-size: 24px;
+    }
+}
+
+
+// アワード
+.bl_awardBody{
+    margin-top: 40px;
+}
+.bl_award + .bl_award{
+    margin-top: 24px;
+}
+@include mixin.breakpoint("tab"){
+    .bl_awardBody{
+        margin-top: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    .bl_award + .bl_award{
+        margin-top: 0;
+    }
+}
+// コンテンツ
+.bl_award_contWrapper{
+    margin-top: 16px;
+
+    .bl_award_cont{
+        text-align: center;
+    }
+}
+@include mixin.breakpoint("tab"){
+    .bl_award_contWrapper{
+        .bl_award_cont{
+            font-size: 18px;
+        }
+    }
+}
+
+// フォトスクール
+.bl_photoBody{
+    margin-top: 40px;
+}
+.bl_photo_cont_line + .bl_photo_contBody{
+    margin-top: 25px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_photoBody{
+        margin-top: 56px;
+    }
+    .bl_photo_cont_line + .bl_photo_contBody{
+        margin-top: 30px;
+    }
+}
+// コンテンツ
+.bl_photo_cont{
+    margin-top: 13px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_photo_contBody{
+        display: flex;
+    }
+    .bl_photo_contTtl{
+        width: 30%;
+    }
+    .bl_photo_cont{
+        width: 70%;
+        margin-top: 0;
+    }
+}
+// 区切り線
+.bl_photo_cont_line{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: variable.$border-grey;
+    margin-top: 25px;
+}
+// リスト
+.bl_photo_cont_list{
+    margin-top: 25px;
+
+    .bl_photo_cont_listItem + .bl_photo_cont_listItem{
+        margin-top: 8px;
+    }
+}
+@include mixin.breakpoint("pc"){
+    .bl_photo_cont_list{
+        margin-top: 0px;
+        width: 70%;
+
+        .bl_photo_cont_listItem + .bl_photo_cont_listItem{
+            margin-top: 16px;
+        }
+    }
+}
+// ボタン上コピー
+.bl_photo_copyWrapper{
+    margin-top: 40px;
+}
+.bl_photo_copy{
+    font-size: 16px;
+    line-height: 175%;
+    text-align: center;
+}
+@include mixin.breakpoint("pc"){
+    .bl_photo_copyWrapper{
+        margin-top: 56px;
+    }
+    .bl_photo_copy{
+        font-size: 24px;
+    }
+}
+
+
+// コンタクト
+.bl_contactBody{
+    margin-top: 40px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_contactBody{
+        margin-top: 56px;
+    }
+}
+// タイトル部分
+.bl_contact_cont_ttl{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .bl_contact_cont_required{
+        color: variable.$font-color-red;
+    }
+}
+// 入力部分
+form{
+    width: 100%;
+}
+.bl_contact_cont{
+    input{
+        width: 100%;
+        height: 60px;
+        padding: 10px;
+        margin-top: 16px;
+        color: variable.$font-color-black;
+        background: variable.$bg-white;
+    }
+    textarea{
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        margin-top: 16px;
+        color: variable.$font-color-black;
+        background: variable.$bg-white;
+    }
+}
+.bl_contact_cont + .bl_contact_cont{
+    margin-top: 32px;
+}

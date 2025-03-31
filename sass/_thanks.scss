@@ -1,0 +1,65 @@
+@use "_variable";
+@use "_mixin";
+
+// レイアウト
+.ly_cont__thanks{
+    padding-top: 100px;
+}
+@include mixin.breakpoint("pc"){
+    .ly_cont__thanks{
+        padding-top: 150px;
+    }
+}
+
+// ブロックモジュール
+// タイトル
+.bl_thanks_ttl{
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 600;
+}
+@include mixin.breakpoint("pc"){
+    .bl_thanks_ttl{
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+}
+// コンテンツ
+.bl_thanks_contBody{
+    margin-top: 24px;
+}
+.bl_thanks_cont{
+    line-height: 150%;
+}
+.bl_thanks_cont + .bl_thanks_cont{
+    margin-top: 16px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_thanks_contBody{
+        margin-top: 42px;
+        text-align: center;
+    }
+}
+// ボタン
+.bl_thanks_btn{
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    width: 200px;
+    padding: 15px 0;
+    color: variable.$font-color-black;
+    border: 1px solid variable.$border-white;
+    background: variable.$bg-white;
+    text-align: center;
+    transition: all 0.3s;
+}
+.bl_thanks_btn:hover{
+    color: variable.$font-color-base;
+    background: none;
+}
+@include mixin.breakpoint("pc"){
+    .bl_thanks_btn{
+        width: 250px;
+    }
+}

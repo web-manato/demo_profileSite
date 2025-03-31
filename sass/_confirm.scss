@@ -1,0 +1,90 @@
+@use "_variable";
+@use "_mixin";
+
+// レイアウト
+.ly_cont__confirm{
+    padding-top: 145px;
+}
+.ly_confirm_exBody{
+    margin-top: 24px;
+}
+.ly_confirm{
+    margin: 0 auto;
+    margin-top: 24px;
+    border: 1px solid variable.$border-grey;
+    padding: 16px 8px;
+    max-width: 1000px;
+}
+.ly_btn__confirm{
+    margin: 0 auto;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+@include mixin.breakpoint("pc"){
+    .ly_confirm{
+        margin-top: 56px;
+    }
+}
+
+// ブロックモジュール
+// 確認テキスト
+.bl_confirm_ex_ttl{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+.bl_confirm_ex{
+    margin-top: 16px;
+    line-height: 175%;
+    letter-spacing: 1px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_confirm_ex_ttl{
+        font-size: 24px;
+        letter-spacing: 7px;
+    }
+    .bl_confirm_ex{
+        margin-top: 24px;
+        text-align: center;
+    }
+}
+// 各項目
+.bl_confirmBody{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.bl_confirmBody + .bl_confirmBody{
+    margin-top: 16px;
+}
+@include mixin.breakpoint("pc"){
+    .bl_confirmBody + .bl_confirmBody{
+        margin-top: 24px;
+    }
+}
+// 項目名
+.bl_confirm_item{
+    width: 50%;
+}
+// 入力内容
+.bl_confirm_cont{
+    width: 50%;
+    overflow-wrap: break-word;
+    line-height: 150%;
+}
+
+
+// エレメントモジュール
+.el_btn_submit__back{
+    background: none;
+    color: variable.$font-color-base;
+}
+.el_btn_submit__back:hover{
+    color: variable.$font-color-black;
+    background: variable.$bg-white;
+}

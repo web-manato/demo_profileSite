@@ -1,0 +1,25 @@
+@use "_mixin";
+@use "_variable";
+
+// レイアウト
+.ly_footer{
+    width: 100%;
+    padding: 32px 0;
+    background: variable.$bg-base;
+}
+
+// ブロックモジュール
+.bl_footer_inner{
+    width: 90%;
+    margin: 0 auto;
+}
+// ロゴ
+.bl_footer_logoWrapper{
+    width: 100%;
+    text-align: center;
+}
+// コピーライト
+.bl_footer_copyRight_wrapper{
+    margin-top: 12px;
+    text-align: center;
+}

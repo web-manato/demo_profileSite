@@ -1,0 +1,175 @@
+@use "_mixin";
+@use "_variable";
+
+// ベーススタイル
+body{
+    font-size: 14px;
+    font-family: variable.$font-family-jp;
+    color: variable.$font-color-base;
+    background: variable.$bg-base;
+}
+// PC
+@include mixin.breakpoint("pc"){
+    body{
+        font-size: 16px;
+    }
+}
+// ブロックモジュール
+// コンテンツ幅
+.bl_cont_inner{
+    width: 90%;
+    max-width: 1300px;
+    padding-bottom: 23px;
+    margin: 0 auto;
+}
+.bl_cont_inner__70{
+    max-width: 1000px;
+}
+.bl_cont_inner__55{
+    max-width: 760px;
+}
+// エレメントモジュール
+// コンテンツ幅
+@include mixin.breakpoint("pc"){
+    .el_lb{
+        display: none;
+    }
+}
+// PC
+@include mixin.breakpoint("pc"){
+    .bl_cont_inner{
+        width: 80%;
+    }
+    .bl_cont_inner__70{
+        width: 70%;
+    }
+    .bl_cont_inner__55{
+        width: 55%;
+    }
+}
+// 画像
+picture{
+    display: block;
+}
+.bl_imgWrapper img{
+    width: 100%;
+}
+// 改行
+@include mixin.breakpoint("pc"){
+    .el_lb{
+        display: none;
+    }
+}
+
+// レイアウト
+// 各セクション
+.ly_cont{
+    width: 100%;
+    padding: 80px 0;
+}
+.ly_cont__bgBase{
+    background: variable.$bg-base;
+}
+.ly_cont__bgBase_light{
+    background: variable.$bg-base-light;
+}
+@include mixin.breakpoint("pc"){
+    .ly_cont{
+        padding: 104px 0;
+    }
+}
+// ボタン
+.ly_btn{
+    width: 100%;
+    margin-top: 24px;
+}
+@include mixin.breakpoint("pc"){
+    .ly_btn{
+        margin-top: 32px;
+    }
+}
+
+// エレメントモジュール
+// セクションタイトル
+.el_secTtl_en{
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 5px;
+    text-indent: 5px;
+}
+.el_secTtl_jp{
+    text-align: center;
+    margin-top: 12px;
+}
+@include mixin.breakpoint("tab"){
+    .el_secTtl_en{
+        font-size: 48px;
+        letter-spacing: 9px;
+        text-indent: 9px;
+    }
+    .el_secTtl_jp{
+        margin-top: 16px;
+    }
+}
+
+// ボタン
+.el_btn{
+    display: block;
+    width: 260px;
+    padding: 22px 0;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid variable.$border-grey;
+    position: relative;
+    transition: all 0.3s;
+}
+.el_btn::after{
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: variable.$border-grey;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transition: all 0.3s;
+}
+.el_btn:hover{
+    opacity: 0.7;
+}
+.el_btn:hover::after{
+    width: 45px;
+    right: -25px;
+}
+@include mixin.breakpoint("pc"){
+    .el_btn{
+        width: 705px;
+        padding: 29px 0;
+        font-size: 32px;
+    }
+    .el_btn::after{
+        width: 70px;
+    }
+    .el_btn:hover::after{
+        width: 80px;
+        right: -30px;
+    }
+}
+
+// コンタクトフォーム送信ボタン
+.el_btn_submit{
+    display: block;
+    width: 260px;
+    padding: 22px 0;
+    font-size: 16px;
+    margin: 0 auto;
+    border: 1px solid variable.$border-white;
+    background: variable.$bg-white;
+    color: variable.$font-color-black;
+    text-align: center;
+    transition: all 0.3s;
+}
+.el_btn_submit:hover{
+    color: variable.$font-color-base;
+    background: none;
+}

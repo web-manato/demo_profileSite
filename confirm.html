@@ -1,0 +1,160 @@
+<?php include(dirname(__FILE__). '/php/confirm.php') ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="http://www.google.com/s2/favicons?domain=ファビコンを取得したいサイトURL">
+    <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+    <meta name="msapplication-TileImage" content="画像のURL" />
+    <meta name="msapplication-TileColor" content="カラーコード（例：#F89174）"/>
+    <title>デモページ</title>
+    <meta name="description" content="まなとが制作したプロフィールページデモです。">
+
+    <!-- css -->
+    <link rel="stylesheet" href="sass/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- ogp -->
+	<meta property="og:url" content="hp-demo1.web-manato.com " />
+	<meta property="og:type" content=" website" />
+	<meta property="og:title" content=" プロフィールデモページ" />
+	<meta property="og:description" content="まなとが制作したプロフィールページデモです。 " />
+	<meta property="og:site_name" content="プロフィールデモページ" />
+
+    <!-- js -->
+    <script src="js/main.js" type="module"></script>
+
+</head>
+<body>
+    <header class="ly_header">
+        <div class="bl_header_inner">
+            <div class="bl_header_sp">
+                <h1 href="#" class="bl_header_logoWrapper">
+                    <img src="img/sp_logo.svg" alt="Y.T photo studio">
+                </h1>
+                <div class="bl_header_sp_hamburger_body" id="js-hamburger">
+                    <div class="bl_header_sp_hamburger_btn">
+                        <span class="bl_header_sp_hamburger_btn_line"></span>
+                        <span class="bl_header_sp_hamburger_btn_line2"></span>
+                    </div>
+                    <div class="bl_header_sp_hamburger_menu_bg">
+                        <nav class="bl_header_sp_hamburger_menu_body">
+                            <ul class="bl_header_sp_hamburger_menu">
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#concept">Profile</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#product">Products</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#instagram">Works</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#showRoom">Awards</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#showRoom">Photo School</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                                <li class="bl_header_sp_hamburger_menu_list">
+                                    <a href="#shop">Contact</a>
+                                </li>
+                                <span class="bl_header_sp_hamburger_menu_list_line"></span>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_header_pc">
+                <h1 href="#" class="bl_header_logoWrapper">
+                    <img src="img/pc_logo.svg" alt="Y.T photo studio">
+                </h1>
+                <nav class="bl_header_pc_nav">
+                    <ul class="bl_header_pc_nav_list">
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#concept">Profile</a>
+                        </li>
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#product">Products</a>
+                        </li>
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#instagram">Works</a>
+                        </li>
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#showRoom">Awards</a>
+                        </li>
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#shop">Photo School</a>
+                        </li>
+                        <li class="bl_header_pc_nav_list_item">
+                            <a href="#shop">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="ly_cont ly_cont__confirm ly_cont__bgBase_light">
+            <div class="bl_cont_inner">
+                <div class="ly_confirm_exBody">
+                    <h2 class="bl_confirm_ex_ttl">入力内容確認</h2>
+                    <p class="bl_confirm_ex">以下の内容でお間違いなければ「送信する」ボタンを押してください。<br></p>
+                    <p class="bl_confirm_ex">※このフォームは仮のため、メールの送信は行われずにサンクスページへ遷移します</p>
+                </div>
+                <div class="ly_confirm">
+                    <div class="bl_confirmBody">
+                        <h2 class="bl_confirm_item">名前</h2>
+                        <p class="bl_confirm_cont"><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                    <div class="bl_confirmBody">
+                        <h2 class="bl_confirm_item">メールアドレス</h2>
+                        <p class="bl_confirm_cont"><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                    <div class="bl_confirmBody">
+                        <h2 class="bl_confirm_item">お問い合わせ内容</h2>
+                        <p class="bl_confirm_cont"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                </div>
+
+                <!-- サンクスページへの情報受け渡し -->
+                <form method="post" action="thanks.html">
+                    <input type="hidden" name="name" value="<?php echo $name; ?>">
+                    <input type="hidden" name="email" value="<?php echo $email; ?>">
+                    <input type="hidden" name="message" value="<?php echo $message; ?>">
+                    <div class="ly_btn ly_btn__confirm">
+                        <input class="el_btn_submit" type="submit" name="submit" value="送信">
+                        <button class="el_btn_submit el_btn_submit__back" type="button" onclick="history.back()">戻る</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="ly_footer">
+        <div class="bl_footer_inner">
+            <picture class="bl_footer_logoWrapper">
+                <source media="(max-width: 1080px)" srcset="img/sp_logo.svg">
+                <img src="img/pc_logo.svg" alt="Y.T Photo Studio">
+            </picture>
+            <div class="bl_footer_copyRight_wrapper">
+                <small class="bl_footer_copyRight">&copy;2021 Yamada Taro</small>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
